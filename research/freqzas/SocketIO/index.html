@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Socket.IO chat</title>
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 3rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #form {
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.25rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 3rem;
+      box-sizing: border-box;
+      backdrop-filter: blur(10px);
+    }
+
+    #input {
+      border: none;
+      padding: 0 1rem;
+      flex-grow: 1;
+      border-radius: 2rem;
+      margin: 0.25rem;
+    }
+
+    #input:focus {
+      outline: none;
+    }
+
+    #form>button {
+      background: #333;
+      border: none;
+      padding: 0 1rem;
+      margin: 0.25rem;
+      border-radius: 3px;
+      outline: none;
+      color: #fff;
+    }
+
+    #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #messages>li {
+      padding: 0.5rem 1rem;
+    }
+
+    #messages>li:nth-child(odd) {
+      background: #efefef;
+    }
+
+    #chat-container {
+      width: 100%;
+      height: 300px;
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: repeat(3, 180px);
+      grid-gap: 40px;
+    }
+
+    #chat-window-1,
+    #chat-window-2,
+    #chat-window-3 {
+      margin: 10px;
+      border: 1px solid #000;
+      width: 200px;
+    }
+
+    #chat-1 {
+      width: 200px;
+      background: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="chat-container">
+
+    <div id="chat-window-1">
+      <div id="message-window-1"></div>
+
+      <form id="chat-1">
+        <input id="chat-input-1">
+        <button id="chat-input-1">Send</button>
+      </form>
+    </div>
+
+    <div id="chat-window-2">Chat window 2</div>
+
+    <div id="chat-window-3">Chat window 3</div>
+
+  </div>
+
+  <form id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+  </form>
+</body>
+
+</html>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io("http://localhost");
+
+  var userWindow_1 = document.getElementById('messages-window-1');
+  var userWindow_2 = document.getElementById('messages-window-2');
+
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  });
+
+  socket.on('chat message', function (msg) {
+    var message_window_1 = document.getElementById('message-content');
+    var message_window_2 = document.getElementById('message-content-1');
+    var message_window_3 = document.getElementById('message-content-2');
+    message_window_1.textContent = msg;
+    message_window_2.textContent = msg;
+    message_window_3.textContent = msg;
+
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script>
