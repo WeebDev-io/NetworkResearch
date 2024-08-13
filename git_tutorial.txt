@@ -1,0 +1,26 @@
+# Get the bloody git repository
+git clone https://github.com/WeebDev-io/NetworkResearch.git
+
+#Configurate your local git so that it can actually talk to github
+# Anatomy of the command
+# --global is what you think it is...
+# remote.origin.url 
+# <url to the github repo>
+# IF YOU GET A PERMISSION ERROR ITS BECAUSE YOU DIDN'T ADD YOURSELF TO THE REPO
+git config --global remote.origin.url "https://github.com/WeebDev-io/NetworkResearch.git"
+
+
+git config --global user.email
+git config --global user.name
+
+# Make sure you have all the branches and all the remote origins etc
+# git fetch --help will tell you more
+git fetch
+
+# ACTUALLY IMPORTANT PART
+git remote add origin remote
+git remote set-url git@github.com:WeebDev-io/NetworkResearch.git
+git remote set-url --push origin git@github.com:WeebDev-io/NetworkResearch.git
+
+# Actually push up the git object to the github host
+git push
