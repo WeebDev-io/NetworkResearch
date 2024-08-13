@@ -1,0 +1,154 @@
+.friendContainer {
+  height: 835px;
+  position: relative;
+  background: #f1f1f1;
+  .friends {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    color: #303030;
+    border-bottom: 1px solid #2c2c2c14;
+    box-shadow: 0 5px 10px 1px #00000040;
+  }
+  .friendsContentHolder {
+    width: 95%;
+    height: 750px;
+    margin: 5px auto;
+    padding: 10px 5px;
+    background: #f1f1f14a;
+    overflow: hidden scroll;
+    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 20px;
+    .friendsCard {
+      height: 240px;
+      text-align: center;
+      border-top: 2px ridge #618b9d;
+      border-left: 2px ridge #618b9d;
+      border-right: 2px groove #618b9d;
+      border-bottom: 2px groove #618b9d;
+      box-shadow: 0 0 2px 1px #00000060;
+      border-radius: 9px;
+      background: linear-gradient(to top, #618b9d, #c3edff);
+      .imgContainer {
+        height: 124px;
+        width: 90%;
+        border-top: 2px ridge #618b9d;
+        border-left: 2px ridge #618b9d;
+        border-right: 2px groove #618b9d;
+        border-bottom: 2px groove #618b9d;
+        box-shadow: 0 0 2px 1px #00000040;
+        background: linear-gradient(to top, #618b9d, #c3edff);
+        border-radius: 9px;
+        margin: 6px auto;
+        .friendsImg {
+          width: 100px;
+          height: 100px;
+          border: 1px solid #00000050;
+          border-radius: 100%;
+          position: relative;
+          top: 9%;
+        }
+      }
+      .networkingUserInfo {
+        margin: 0 auto;
+        width: 95%;
+        height: 95px;
+        border-radius: 0 0 9px 9px;
+        .networkingUserName {
+          width: 94%;
+          height: 25px;
+          line-height: 25px;
+          margin: 5px auto;
+          text-overflow: "...";
+          background: linear-gradient(to top, #deb94c, #f8e5a0);
+          border: 1px solid #000000;
+          font-size: 14px;
+          position: relative;
+          border-radius: 7px 7px 0 0;
+          .iconHolder {
+            position: absolute;
+            width: 27px;
+            height: 25px;
+            line-height: 25px;
+            display: block;
+            border-right: 1px solid #00000060;
+            background: linear-gradient(to top, #A67C00, #FFD447);
+            color: #ffffff;
+            border-radius: 6px 0 0 0;
+            .userIcon {
+              position: relative;
+              font-size: 12px;
+            }
+          }
+        }
+        .buttonsContainer {
+          width: 95%;
+          height: 62px;
+          margin: 0 auto;
+          .friendsSendRequestBtn {
+            position: relative;
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+            text-overflow: "...";
+            border: 1px solid #000000;
+            background: linear-gradient(to top, #26682c, #99ff92);
+            cursor: pointer;
+            font-size: 14px;
+            .iconHolder {
+              position: absolute;
+              width: 27px;
+              height: 26px;
+              line-height: 26px;
+              display: block;
+              border-right: 1px solid #00000060;
+              background: linear-gradient(to top, #003905, #60d558);
+              color: #ffffff;
+              .addFriendIcon {
+                position: relative;
+                font-size: 12px;
+              }
+            }
+          }
+          .friendsViewProfileBtn {
+            position: relative;
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+            margin: 4px 0;
+            text-overflow: "...";
+            border: 1px solid #000000;
+            background: linear-gradient(to top, #618b9d, #c3edff);
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 0 0 6px 6px;
+            .iconHolder {
+              position: absolute;
+              width: 27px;
+              height: 26px;
+              line-height: 26px;
+              display: block;
+              border-right: 1px solid #00000060;
+              background: linear-gradient(to top, #002839, #54c6f7);
+              color: #ffffff;
+              border-radius: 0 0 0 4px;
+              .addFriendIcon {
+                position: relative;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// .friendsRequestInfoWinow{}
+// .friendsViewProfile{}

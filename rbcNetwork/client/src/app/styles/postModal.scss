@@ -1,0 +1,519 @@
+@use "sass:math";
+.postsCardContainerCommentBtn_Modal {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -5%);
+  height: 880px;
+  background: linear-gradient(to right, #bebdbd, #e7e6e6, #bebdbd);
+  z-index: 10;
+  box-shadow: 0 0 20px 700px #000000ee;
+  border-radius: 9px;
+  border-top: 3px ridge #000000c0;
+  border-left: 3px ridge #000000c0;
+  border-right: 3px groove #000000c0;
+  border-bottom: 3px groove #000000c0;
+  @media (min-width:320px) {
+    width: 90%;
+  }
+  @media (min-width:460px) {
+    width: 450px;
+  }
+  @media (min-width:580px) {
+    width: 550px;
+  }
+  @media (min-width:700px) {
+    width: 650px;
+  }
+  .postCommentHeader {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+    border-bottom: 2px ridge #000000;
+    .iconHolder {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      color: #ffffff;
+      border-radius: 100%;
+      width: 25px;
+      height: 25px;
+      line-height: 27px;
+      background: #72717140;
+      font-family: fantasy;
+      cursor: pointer;
+      transition: all 400ms ease;
+      &:hover {
+        background: #00000040;
+        transition: all 400ms ease;
+      }
+      .closeIconPostCommentModal {
+        position: relative;
+        left: 0px;
+      }
+    }
+  }
+  .postCommentPostWindow {
+    width: 95%;
+    height: 385px;
+    margin: 10px auto;
+    border: 1px solid #00000040;
+    border-radius: 9px;
+    .postCommentPostHeader {
+      height: 60px;
+      width: 95%;
+      margin: 5px auto 0;
+      border-radius: 9px;
+      display: flex;
+      .img {
+        margin: 5px;
+        border-radius: 9px;
+        width: 50px;
+        height: 50px;
+      }
+      .author {
+        width: 90%;
+        .name {
+          display: block;
+          width: 85%;
+          font-size: 16px;
+          border-radius: 6px;
+          height: 25px;
+          line-height: 35px;
+        }
+        .when {
+          display: block;
+          font-size: 12px;
+          width: 85%;
+          border-radius: 6px;
+          height: 25px;
+          line-height: 35px;
+        }
+      }
+    }
+    .postCommentPostTextWindow {
+      height: 200px;
+      width: 95%;
+      margin: 5px auto;
+      text-overflow: "...";
+      border-radius: 9px;
+      .postText {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 14px;
+        padding: 0 5px;
+      }
+    }
+    .postCardNav {
+      height: 95px;
+      width: 95%;
+      margin: 5px auto;
+      .postCardEmotesNav {
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        flex-direction: row;
+        width: 98%;
+        margin: 4px auto;
+        background: #bababa;
+        position: relative;
+        .postCardEmotes {
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          margin: 8px 5px;
+          text-align: center;
+          border-radius: 6px;
+          &:nth-of-type(1) {
+            background: linear-gradient(to bottom, #659ff5, #004cbe);
+          }
+          &:nth-of-type(2) {
+            background: linear-gradient(to bottom, #f7e73b, #8d7a01);
+          }
+          &:nth-of-type(3) {
+            background: linear-gradient(to bottom, #f7c163, #d06500)
+          }
+          &:nth-of-type(4) {
+            background: linear-gradient(to bottom, #53e796, #005225);
+          }
+          &:nth-of-type(5) {
+            background: linear-gradient(to bottom, #fdff7c, #ffbb7c)
+          }
+          &:nth-of-type(6) {
+            background: linear-gradient(to bottom, #969dff, #cb9dff);
+          }
+          // .emoteCardIcon {
+          //   color: #000000;
+          // }
+        }
+        .postCardCommentTotal {
+          width: 40px;
+          height: 25px;
+          line-height: 25px;
+          margin: 8px 5px;
+          text-align: center;
+          text-decoration: underline;
+          font-size: 14px;
+        }
+        .postShareComment {
+          position: absolute;
+          right: 1px;
+          display: flex;
+          flex-direction: row;
+          width: 90px;
+          height: 25px;
+          line-height: 25px;
+          margin: 8px 5px;
+          .navShare {
+            width: 48%;
+            margin: 0 1px;
+            .shareSpan {
+              display: inline-block;
+              height: 20px;
+              line-height: 20px;
+              font-weight: 500;
+              text-align: right;
+              font-size: 14px;
+              padding: 0 2px;
+              .shareIcon {
+                font-size: 12px;
+                position: relative;
+                left: 2px;
+              }
+            }
+          }
+          .navComment {
+            width: 48%;
+            margin: 0 1px;
+            .commentSpan {
+              display: inline-block;
+              height: 20px;
+              line-height: 20px;
+              font-weight: 500;
+              font-size: 14px;
+              padding: 0 2px;
+              .commentIcon {
+                font-size: 12px;
+                position: relative;
+                left: 2px;
+              }
+            }
+          }
+        }
+      }
+      .postCardBtnsHolder {
+        display: flex;
+        flex-direction: row;
+        height: 40px;
+        line-height: 40px;
+        width: 98%;
+        margin: 3px auto;
+        text-align: center;
+        .postCardLikeBtn {
+          width: 20%;
+          height: 30px;
+          line-height: 30px;
+          margin: 4px 3px;
+          border: 1px solid #00000020;
+          font-size: 17px;
+          border-radius: 6px;
+          color: #000000;
+          box-shadow: 0 0 2px 1px #00000060;
+          background: linear-gradient(to top, #f8fafc, #c4c4c5);
+          transition: all 500ms ease;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            transition: all 200ms ease-in;
+            box-shadow: 0 1px 2px 1px #00000060;
+          }
+          .iconHolder {
+            position: absolute;
+            left: 8px;
+            .likeIcon {
+              font-size: 14px;
+            }
+          }
+          .likeText {
+            position: relative;
+            left: 6px;
+          }
+        }
+        .postCardCommentBtn {
+          width: 37%;
+          height: 30px;
+          line-height: 30px;
+          margin: 4px 3px;
+          border: 1px solid #00000020;
+          font-size: 16px;
+          border-radius: 6px;
+          color: #000000;
+          box-shadow: 0 0 2px 1px #00000060;
+          background: linear-gradient(to top, #f8fafc, #c4c4c5);
+          transition: all 500ms ease;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            transition: all 200ms ease-in;
+            box-shadow: 0 1px 2px 1px #00000060;
+          }
+          .iconHolder {
+            position: absolute;
+            left: 8px;
+            .commentIcon {
+              font-size: 14px;
+            }
+          }
+          .commentText {
+            position: relative;
+            left: 6px;
+          }
+        }
+        .postCardShareBtn {
+          height: 30px;
+          width: 37%;
+          line-height: 30px;
+          margin: 4px 3px;
+          border: 1px solid #00000020;
+          font-size: 16px;
+          border-radius: 6px;
+          color: #000000;
+          box-shadow: 0 0 2px 1px #00000060;
+          background: linear-gradient(to top, #f8fafc, #c4c4c5);
+          transition: all 500ms ease;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            transition: all 200ms ease-in;
+            box-shadow: 0 1px 2px 1px #00000060;
+          }
+          .iconHolder {
+            position: absolute;
+            left: 8px;
+            .shareIcon {
+              font-size: 14px;
+            }
+          }
+          .shareText {
+            position: relative;
+            left: 6px;
+          }
+        }
+      }
+    }
+  }
+  .postReplyContainer {
+    width: 99%;
+    height: 400px;
+    margin: 5px auto;
+    padding-top: 1px;
+    .postReplyWindow {
+      height: 395px;
+      width: 95%;
+      margin: 2px auto;
+      overflow: scroll;
+      .postReplyContent {
+        width: 95%;
+        height: 115px;
+        margin: 0 auto;
+        padding: 2px;
+        position: relative;
+        border-radius: 6px;
+        .postReplyPostInfo {
+          display: flex;
+          flex-direction: column;
+          height: 90px;
+          position: relative;
+          .img {
+            border-radius: 6px;
+            background: #8a8a8a;
+            margin: 7px;
+            width: 35px;
+            height: 35px;
+          }
+          .postUserInfo {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 1px;
+            transform: translate(-6px, 5px);
+            font-size: 14px;
+            background: #bababa;
+            border-radius: 6px;
+            @media (min-width:320px) {
+              width: 85%;
+            }
+            @media (min-width:460px) {
+              width: 86%;
+            }
+            @media (min-width:580px) {
+              width: 89%;
+            }
+            @media (min-width:700px) {
+              width: 91%;
+            }
+            .name {
+              border-radius: 9px 9px 0 0;
+              padding: 0 5px;
+              height: 20px;
+              line-height: 20px;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+              border-bottom: 1px solid #00000040;
+            }
+            .text {
+              height: 45px;
+              padding: 5px;
+              text-overflow: "...";
+              border-radius: 0 0 9px 9px;
+              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              font-size: 12px;
+            }
+          }
+        }
+        .buttonContainer {
+          display: flex;
+          flex-direction: row;
+          height: 24px;
+          line-height: 24px;
+          position: absolute;
+          bottom: 5px;
+          right: 8px;
+          border-radius: 6px;
+          font-size: 13px;
+          @media (min-width:320px) {
+            width: 84%;
+          }
+          @media (min-width:460px) {
+            width: 85%;
+          }
+          @media (min-width:580px) {
+            width: 88%;
+          }
+          @media (min-width:700px) {
+            width: 90%;
+          }
+          .whenReply {
+            background: linear-gradient(to top, #f8fafc, #c4c4c5);
+            border: 1px solid #00000020;
+            text-align: center;
+            width: 25px;
+            height: 23px;
+            line-height: 24px;
+            border-radius: 6px;
+            margin: 0 5px 0 0;
+            transform: translate(-1px, -1px);
+            box-shadow: 0 0 2px 1px #00000060;
+            color: #000000;
+            font-weight: bold;
+          }
+          .replieBtnContainer {
+            display: flex;
+            flex-direction: row;
+            border-radius: 6px;
+            width: 40%;
+            height: 25px;
+            line-height: 25px;
+            margin: -1px 2px 0 0;
+            .reactToReplyBtn {
+              width: 45%;
+              height: 26px;
+              font-size: 14px;
+              margin: 0 auto;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+              border-radius: 6px;
+              border: 1px solid #00000020;
+              color: #000000;
+              box-shadow: 0 -1px 2px 1px #00000060;
+              background: linear-gradient(to top, #f8fafc, #c4c4c5);
+              transition: all 500ms ease;
+              cursor: pointer;
+              &:hover {
+                transition: all 200ms ease-in;
+                box-shadow: 0 1px 2px 1px #00000060;
+              }
+            }
+            .replyToReplyBtn {
+              width: 45%;
+              height: 26px;
+              font-size: 14px;
+              margin: 0 auto;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+              border-radius: 6px;
+              color: #000000;
+              border: 1px solid #00000020;
+              box-shadow: 0 -1px 2px 1px #00000060;
+              background: linear-gradient(to top, #f8fafc, #c4c4c5);
+              transition: all 500ms ease;
+              cursor: pointer;
+              &:hover {
+                transition: all 200ms ease-in;
+                box-shadow: 0 1px 2px 1px #00000060;
+              }
+            }
+          }
+          .replyReactionsContainer {
+            width: 60%;
+            height: 25px;
+            line-height: 25px;
+            transform: translate();
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            .reactionHolder {
+              border-radius: 6px;
+              width: 75%;
+              .replyReactions {
+                display: inline-block;
+                font-size: 16px;
+                height: 25px;
+                width: 25px;
+                background: #323232;
+                margin: 0 0 0 3px;
+                border-radius: 6px;
+              }
+            }
+          }
+          .replyReactionsCount {
+            display: inline-block;
+            font-size: 14px;
+            height: 25px;
+            line-height: 25px;
+            width: 25%;
+            margin: 0 0 5px 0;
+            border-radius: 6px;
+            padding: 0 2px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-decoration: underline;
+          }
+        }
+      }
+      .postReplyOfRepliesContent {
+        height: 115px;
+        width: 95%;
+        padding: 2px;
+        position: relative;
+        margin: 5px 0 0;
+        border-radius: 6px;
+        @for $left from 2 through 10 {
+          &:nth-of-type(#{$left}) {
+            margin-left: calc(44px * #{$left});
+            background: #6eb60292;
+          }
+        }
+      }
+    }
+  }
+}
+// @media (min-width:320px) {
+//   width: 90%;
+// }
+// @media (min-width:460px) {
+//   width: 450px;
+// }
+// @media (min-width:580px) {
+//   width: 550px;
+// }
+// @media (min-width:700px) {
+//   width: 650px;
+// }

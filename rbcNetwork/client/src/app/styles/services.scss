@@ -1,0 +1,88 @@
+.servicesContainer{
+  height:825px;
+  position: relative;
+  background: #f1f1f1;
+  h2.servicesHeader{
+    width: 100%;
+    height: 30px; line-height: 30px;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    color: #303030;
+    border-bottom: 1px solid #2c2c2c14;
+    box-shadow: 0 5px 10px 1px #00000040;
+  }
+  .servicesNote{
+    width: 100%;
+    height: 30px; line-height: 30px;
+    box-shadow:0 5 10px 1px #00000040;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 14px;
+    .servicesNoteIcon{
+      &:nth-of-type(1){transform: rotate(180deg);}
+      &:nth-of-type(2){transform: translate(0,5px);}
+      &:nth-of-type(3){transform: rotate(180deg);}
+    }
+  }
+  .servicesContent{
+    width: 95%;
+    height: 700px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #f1f1f1,#a5a5a5ae);
+    box-shadow:0 0 3px 1px #00000040;
+    padding:20px 10px;
+    overflow: hidden scroll;
+    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 10px;
+    .servicesContentHolder{
+      background: #f1f1f1;
+      border: 1px solid #00000080;
+      box-shadow:0 0 3px 1px #00000060;
+      border-radius: 9px;
+      .servicesCardHeader{
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        background:#d7d7d7;
+        position: relative;
+        font-size: 16px;
+        border-radius: 9px 9px 0 0;
+        text-align: center;
+        color:black;
+        .servicesIconTop{ position: absolute; left: 8px; top: 8px; color:#00000060;}
+        .servicesVisualPinnerIcon{ position: absolute; right: 8px; top: 8px; border-radius:100%; color:#ffffff;
+        }
+      }
+      .servicesInformation{
+        position: relative;
+        padding: 3px 5px;
+        font-size:14px;
+        font-style: oblique;
+        width: 90%;
+        height: 200px;
+        margin: 5px auto;
+        .servicesFadeA{
+          position: absolute;
+          font-size: 116px;
+          left:50%;
+          right:50%;
+          transform: rotate(-90deg) translate(-50%, 50%);
+          color:#00000008;
+        }
+        .servicesFadeB{
+          position: absolute;
+          font-size: 116px;
+          left:50%;
+          right:50%;
+          transform: rotate(90deg) translate(50%, 140%);
+          color:#00000008;
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-import { Manager } from "socket.io-client";
+const { Client } = require("socket.io-client");
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -17,16 +17,20 @@ io.on('connection', (socket) => {
   });
 });
 
+io.on("connection", (socket) => {
+  socket.emit("Room", {name:"Lucy"}, {name:"Tom"}, {name:"Gin"});
+});
+
+io.on("connection", (socket) => {
+  socket.join("Room");
+  io.to("Room").emit("user",'A');
+});
+
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   });
 });
-
-
-const manager = new Manager("https://localhost");
-const socket = manager.socket("/");
-const adminSocket = manager.socket("/admin"); 
 
 server.listen(3000, () => {
   console.log('listening on *:3000');

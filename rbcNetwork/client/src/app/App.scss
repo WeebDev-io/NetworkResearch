@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: thin;
+  // box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+.falling-leaf-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@keyframes falling-leaves {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(80vh) rotate(720deg);
+  }
+}
+.falling-leaf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.pumpkin {
+  animation: rotate infinite 5s ease-in-out;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 4, 0, 180deg);
+  }
+  50% {
+    transform: rotate3d(0, 4, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 4, 0, -180deg);
+  }
+}
+//Web styles
+@mixin NavShadow {
+  box-shadow: 0 0 2px 1px #00000060;
+}
+@import 'styles/colorPallet/colorPallet.scss';
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  @import 'styles/login.scss';
+  @import 'styles/register.scss';
+  @import 'styles/forgotPassword.scss';
+  @import 'styles/leftNavStyles.scss';
+  @import 'styles/mainNav.scss';
+  @import 'styles/rightNavStyles.scss';
+  @import 'styles/news.scss';
+  @import 'styles/chat.scss';
+  @import 'styles/posts.scss';
+  @import 'styles/updates.scss';
+  @import 'styles/feedback.scss';
+  @import 'styles/services.scss';
+  @import 'styles/friends.scss';
+  @import 'styles/blocked.scss';
+  @import 'styles/settings.scss';
+  @import 'styles/profile.scss';
+  @import 'styles/portfolio.scss';
+  @import 'styles/components/box.scss';
+  @import 'styles/footer.scss';
+  .noMessages {
+    position: relative;
+    top: 4%;
+    left: 2%;
+    border-radius: 9px;
+    width: 98%;
+    height: 75px;
+    color: #fafafa;
+    transform: translate(0, -4%);
+    box-sizing: border-box;
+    .errorType {
+      background: #690000;
+      width: auto;
+      padding: 0 10px;
+      height: 35px;
+      line-height: 35px;
+      position: relative;
+      text-align: center;
+      border-radius: 9px 9px 0 0;
+      display: inline-block;
+    }
+    .noMessageIn {
+      width: 100%;
+      height: 35px;
+      line-height: 35px;
+      position: relative;
+      box-sizing: border-box;
+      padding: 0 0 0 5px;
+      border-radius: 0 9px 9px 9px;
+      display: inline-block;
+    }
+    .team {
+      background: #003b55;
+    }
+    .group {
+      background: #2b6e30;
+    }
+    .friends {
+      background: #424242;
+    }
+  }
+  .online {
+    color: #00ff00;
+  }
+  .offline {
+    color: #ff0000;
+  }
+}
