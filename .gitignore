@@ -2,3 +2,4 @@ gitKey
 gitKey.pub
 
 .package-lock
+*package-lock.json
