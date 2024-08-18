@@ -1,11 +1,10 @@
 # WORKFLOW FOR THE NETWORK TEAM
-### branch explanation
-> **Main** and **Master** <- this is the same thing
-> ---- 
-> they will be merged and pruned. Assume Main going forward
+## branch explanation
+> Branch list a.t.m.: Dev, Stage, Production, and also research. Main is well... main.
+----
+> ** Dev **  : The branch of where we test, mess around, generally experiment~
+----
+> ** Stage** : Where the team pushes WORKING (NOT BROKEN, MUST COMPILE / RUN) code
+> ** Production ** : the Continous Deployment branch. This will push to the server enventually.
 > ----
-> ** Dev **   <- Dick around branch, do whatever
-> ** Stage** <- 80% done work 
-> ** Production ** <- live code
-> ----
-> **research ** <- PUT RANDOM DOCS HERE
+> **research **: Put random links. Thing of this as the place where small "fiddles" go.
