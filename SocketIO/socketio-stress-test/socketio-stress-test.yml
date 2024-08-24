@@ -1,0 +1,17 @@
+config:
+  target: "http://157.230.6.40:3000" # Replace with your server URL
+  phases:
+    - duration: 60
+      arrivalRate: 50 # Number of new connections per second
+      rampTo: 200     # Ramp up to 200 connections per second
+  processor: "./custom-processor.js"
+  
+
+scenarios:
+  - name: 'My Socket.IO test'
+    engine: socketio
+    flow:
+      - function: "generateRandomString"
+      - emit:
+          channel: 'echo' # Replace with your event name
+          data: { "message": "{{ randomString }}" }
