@@ -1,14 +1,33 @@
 # WORKFLOW FOR THE NETWORK TEAM
-## branch explanation
-> Branch list a.t.m.: Dev, Stage, Production, and also research. Main is well... main.
+#### branch list
+* Dev,
+* Stage, 
+* Production,
+* and also research.
+* Main is well... main.
+  
 ----
-**Dev**:
-> The branch of where we test, mess around, generally experiment~
+
+**Dev** :
+#### Messing around branch.
+The branch of where we test, generally experiment.
+
 ----
+
 **Stage** :
-> Where the team pushes WORKING (NOT BROKEN, MUST COMPILE / RUN) code
-**Production** :
->  the Continous Deployment branch. This will push to the server enventually.
+#### Code that runs goes.
+Where the team pushes not broken code
+
 ----
-**research** :
-> Put random links. Thing of this as the place where small "fiddles" go.
+
+**Production**:
+#### Where ready to go code goes.
+The Continous Deployment branch. 
+This will push to the deployment <server> enventually.
+
+----
+
+**Research** :
+#### Pile_o_random stuff
+Put random links - documents - pdfs.
+Thing of this as the place where small "fiddles" go.
